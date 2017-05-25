@@ -1,4 +1,4 @@
-# This project is for my own custom Elastic Beanstalk platform [eb_ubuntu_nginx_php_platform](https://github.com/sebastian-hsu/eb_ubuntu_nginx_php_platform) 
+# This project is for my own custom Elastic Beanstalk platform [eb_ubuntu_nginx_php_redis_platform](https://github.com/sebastian-hsu/eb_ubuntu_nginx_php_redis_platform) 
 
 ## Create Elastic Beanstalk Environment
 You have to create the environment by using EB CLI
@@ -19,6 +19,7 @@ I add ALB settings, you can modify base on your situation
 ## This repo has following plugins (install on 2017/05/25)
 - [WooCommerce](https://wordpress.org/plugins/woocommerce/)
 - [WordPress Importer](https://wordpress.org/plugins/wordpress-importer/)
+- [Redis Object Cache](https://wordpress.org/plugins/redis-cache/)
 - [Amazon Web Service](https://wordpress.org/plugins/amazon-web-services/)
 - [WP Offload S3 Lite](https://wordpress.org/plugins/amazon-s3-and-cloudfront/)
 
