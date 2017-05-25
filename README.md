@@ -1,0 +1,1 @@
+# wordpress_eb_nginx_php_redis_platform
