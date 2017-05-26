@@ -10,14 +10,19 @@ eb create -p **CUSTOM-PLATFORM-ARN** -c **subdomain_name** -ip **profile_name** 
 
 |Name|Description|
 |:---:|:---:|
-|-p|You should be able to get your **CUSTOM-PLATFORM-ARN** after platform is created. Or you can use `eb platform list` command under your platform project folder to get **CUSTOM-PLATFORM-ARN**|
-|-c|(Optional)|
-|-ip|(Optional)Based on your environment, please make sure you have proper [instance role](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts-roles.html#concepts-roles-instance) setup|
-|--elb-type|You must specify **application** in order to use ALB|
-|-i|(Optional)Instance type you need|
-|-k|(Optional)EC2 instance [key pair](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.managing.ec2.html)|
+|-p|You should be able to get your **CUSTOM-PLATFORM-ARN** after platform is created. Or you can use `eb platform list` command under your platform project folder to get **CUSTOM-PLATFORM-ARN** .|
+|-c|(Optional)Subdoamin name.|
+|-ip|(Optional)Based on your environment, please make sure you have proper [instance role](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts-roles.html#concepts-roles-instance) setup.|
+|--elb-type|You must specify **application** in order to use ALB.|
+|-i|(Optional)Instance type you need.|
+|-k|(Optional)EC2 instance [key pair](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.managing.ec2.html).|
 |--service-role|Default Elastic Beanstalk service role doesn't have ability to access [ALB]((#ALB)), you must specify your own [service role](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts-roles.html#concepts-roles-service) properly.|
-|--vpc.id|You have to specify a VPC ID in order to use ALB|
+|--vpc.id|You have to specify a VPC ID in order to use ALB.|
+|--vpc.ec2subnets|Specifies subnets for Amazon EC2 instances in a VPC.|
+|--vpc.elbsubnets|Specifies subnets for the Elastic Load Balancing load balancer in a VPC.|
+|--vpc.securitygroups|You need to set it properly if you want to [connect to your DB](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.RDS.html) outside this Elastic Beanstalk.|
+|--vpc.elbpublic|(Optional)Check your VPC setting.|
+|--vpc.publicip|(Optional)Check your VPC setting.|
 
 There are some `.ebextensions` settings as below.  
 ### Cloudwatch Logs (remember to add IAM settings)
