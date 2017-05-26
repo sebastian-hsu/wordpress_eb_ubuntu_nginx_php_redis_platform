@@ -2,14 +2,18 @@
 This project is for my own custom Elastic Beanstalk platform [eb_ubuntu_nginx_php_redis_platform](https://github.com/sebastian-hsu/eb_ubuntu_nginx_php_redis_platform) 
 
 ## Create Elastic Beanstalk Environment
-### First: Get your **CUSTOM-PLATFORM-ARN**
-- You should be able to get your **CUSTOM-PLATFORM-ARN** after platform is created.
-- Or you can use `eb platform list` command under your platform project folder to get **CUSTOM-PLATFORM-ARN** 
-
-### Second: Create the environment by using EB CLI
+Create the environment by using EB CLI
 ```
-eb -p create **CUSTOM-PLATFORM-ARN**
+eb create -p **CUSTOM-PLATFORM-ARN** -c **subdomain_name** -ip **profile_name** --elb-type application -i **instance_type** -k **key_name** --service-role **servicerole** --vpc.id **vpc_id** --vpc.ec2subnets **subnet1,subnet2** --vpc.elbsubnets **subnet1,subnet2** --vpc.securitygroups securitygroup1,securitygroup2
 ```
+- CUSTOM-PLATFORM-ARN: You should be able to get your **CUSTOM-PLATFORM-ARN** after platform is created. Or you can use `eb platform list` command under your platform project folder to get **CUSTOM-PLATFORM-ARN**
+- subdomain_name: (optional)
+- profile_name: (optional)
+- instance_type: (optional)
+- key_name: (optional)
+- servicerole: (must)
+- vpc_id: (must)
+- subnet1,subnet2: (must)
 
 There are some `.ebextensions` settings as below.  
 ### Cloudwatch Logs (remember to add IAM settings)
