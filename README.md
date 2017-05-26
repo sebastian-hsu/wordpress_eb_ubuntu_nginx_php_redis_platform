@@ -1,9 +1,14 @@
-# This project is for my own custom Elastic Beanstalk platform [eb_ubuntu_nginx_php_redis_platform](https://github.com/sebastian-hsu/eb_ubuntu_nginx_php_redis_platform) 
+# WordPress based on my custom Elastic Beanstalk Platform (eb_ubuntu_nginx_php_redis_platform)
+This project is for my own custom Elastic Beanstalk platform [eb_ubuntu_nginx_php_redis_platform](https://github.com/sebastian-hsu/eb_ubuntu_nginx_php_redis_platform) 
 
 ## Create Elastic Beanstalk Environment
-You have to create the environment by using EB CLI
-```
+### First: Get your **CUSTOM-PLATFORM-ARN**
+- You should be able to get your **CUSTOM-PLATFORM-ARN** after platform is created.
+- Or you can use `eb platform list` command under your platform project folder to get **CUSTOM-PLATFORM-ARN** 
 
+### Second: Create the environment by using EB CLI
+```
+eb -p create **CUSTOM-PLATFORM-ARN**
 ```
 
 There are some `.ebextensions` settings as below.  
