@@ -84,6 +84,10 @@ define('WP_SITEURL', 'https://'.$_SERVER['HTTP_HOST'].'/');
 define('WP_HOE', 'https://'.$_SERVER['HTTP_HOST'].'/');
 define('DISALLOW_FILE_MODS',true);
 
+
+define( 'DBI_AWS_ACCESS_KEY_ID', $_SERVER['AWS_ACCESS_KEY_ID'] );
+define( 'DBI_AWS_SECRET_ACCESS_KEY', $_SERVER['AWS_SECRET_ACCESS_KEY'] );
+
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
