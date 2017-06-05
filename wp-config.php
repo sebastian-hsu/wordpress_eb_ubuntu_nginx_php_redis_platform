@@ -17,7 +17,9 @@
  *
  * @package WordPress
  */
-
+if (($_SERVER['HTTP_CLOUDFRONT_FORWARDED_PROTO'] == 'https') || ($_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) {
+	$_SERVER['HTTPS'] = 'on';
+}
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', $_SERVER["RDS_DB_NAME"]);
@@ -78,8 +80,8 @@ $table_prefix  = 'wp_';
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
 define('WP_DEBUG', false);
-define('WP_SITEURL', 'http://'.$_SERVER['HTTP_HOST'].'/');
-define('WP_HOE', 'http://'.$_SERVER['HTTP_HOST'].'/');
+define('WP_SITEURL', 'https://'.$_SERVER['HTTP_HOST'].'/');
+define('WP_HOE', 'https://'.$_SERVER['HTTP_HOST'].'/');
 define('DISALLOW_FILE_MODS',true);
 
 /* That's all, stop editing! Happy blogging. */
