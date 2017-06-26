@@ -11,7 +11,7 @@ eb create -p **CUSTOM-PLATFORM-ARN** -c **subdomain_name** -ip **profile_name** 
 - `eb create` options
 
 |Name|Description|
-|:---:|:---:|
+|:---:|---|
 |-p|You should be able to get your **CUSTOM-PLATFORM-ARN** after platform is created. Or you can use `eb platform list` command under your platform project folder to get **CUSTOM-PLATFORM-ARN** .|
 |-c|(Optional)Subdoamin name.|
 |-ip|(Optional)Based on your environment, please make sure you have proper [instance role](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts-roles.html#concepts-roles-instance) setup.|
