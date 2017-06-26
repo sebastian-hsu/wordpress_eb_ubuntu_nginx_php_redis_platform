@@ -36,12 +36,13 @@ I add ALB settings, you can modify base on your situation
 - [application-load-balancer.config](.ebextensions/application-load-balancer.config)
 - [alb-default-process.config](.ebextensions/alb-default-process.config)
 
-## This repo has following plugins (install on 2017/05/25)
-- [WooCommerce](https://wordpress.org/plugins/woocommerce/)
-- [WordPress Importer](https://wordpress.org/plugins/wordpress-importer/)
-- [Redis Object Cache](https://wordpress.org/plugins/redis-cache/)
-- [Amazon Web Service](https://wordpress.org/plugins/amazon-web-services/)
-- [WP Offload S3 Lite](https://wordpress.org/plugins/amazon-s3-and-cloudfront/)
+## This repo contains (install on 2017/05/25)
+- [WordPress 4.7.5]
+- [WooCommerce 3.0.7](https://wordpress.org/plugins/woocommerce/)
+- [WordPress Importer 0.6.3](https://wordpress.org/plugins/wordpress-importer/)
+- [Redis Object Cache 1.3.5](https://wordpress.org/plugins/redis-cache/)
+- [Amazon Web Service 1.0.2](https://wordpress.org/plugins/amazon-web-services/)
+- [WP Offload S3 Lite 1.1.6](https://wordpress.org/plugins/amazon-s3-and-cloudfront/)
 
 ## todo
 - http2 alb
