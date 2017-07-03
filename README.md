@@ -1,14 +1,14 @@
 # WordPress Environment with ALB based on my custom Elastic Beanstalk Platform (eb_ubuntu_nginx_php_redis_platform)
 This project is for my own custom Elastic Beanstalk platform [eb_ubuntu_nginx_php_redis_platform](https://github.com/sebastian-hsu/eb_ubuntu_nginx_php_redis_platform) 
 
-If you are new to Elastic Beanstalk, you can reference my course on Udemy with this [COUPON](https://www.udemy.com/wordpress-on-aws/?couponCode=WP_AWS_EB).
+If you are new to Elastic Beanstalk, you can reference [my course](https://www.udemy.com/wordpress-on-aws/?couponCode=WP_AWS_EB) on Udemy.
 
 ## Create Elastic Beanstalk Environment
 Create the environment by using EB CLI
 ```
 eb create -p **CUSTOM-PLATFORM-ARN** -c **subdomain_name** -ip **profile_name** --elb-type application -i **instance_type** -k **key_name** --service-role **servicerole** --vpc.id **vpc_id** --vpc.ec2subnets **subnet1,subnet2** --vpc.elbsubnets **subnet1,subnet2** --vpc.securitygroups securitygroup1,securitygroup2 --vpc.elbpublic --vpc.publicip
 ```
-- `eb create` options
+- `eb create` options (Ref the detail official [documentation](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-create.html))
 
 |Name|Description|
 |:---:|---|
