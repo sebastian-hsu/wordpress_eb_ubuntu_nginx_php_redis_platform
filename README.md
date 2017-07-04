@@ -30,6 +30,11 @@ There are some `.ebextensions` settings as below.
 ### Cloudwatch Logs (remember to add IAM settings)
 In this repo, I extend existing log streams and add nginx_logs, you can find in [nginx_logs.config](.ebextensions/nginx_logs.config)
 > Be sure to have proper [CloudWatch Log IAM permission](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.cloudwatchlogs.html) in your **instance role**.
+
+Remember to enable CloudWatch logs stream.
+![Management console screen shot](https://user-images.githubusercontent.com/6972644/27810817-9091eb58-6091-11e7-8db3-4a2d32610e84.png)
+
+
 ### <a name="ALB"></a>ALB (remember to add IAM settings)
 I add ALB settings, you can modify base on your situation
 > Be sure to have proper [ALB permission](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environments-cfg-applicationloadbalancer.html) in your **service role**.

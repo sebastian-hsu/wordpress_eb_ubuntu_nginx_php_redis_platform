@@ -82,7 +82,7 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', false);
 define('WP_SITEURL', 'https://'.$_SERVER['HTTP_HOST'].'/');
 define('WP_HOME', 'https://'.$_SERVER['HTTP_HOST'].'/');
-define('DISALLOW_FILE_MODS',true);
+//define('DISALLOW_FILE_MODS',true);
 
 
 define( 'DBI_AWS_ACCESS_KEY_ID', $_SERVER['AWS_ACCESS_KEY_ID'] );
