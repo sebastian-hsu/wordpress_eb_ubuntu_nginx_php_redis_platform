@@ -37,7 +37,7 @@ I add ALB settings, you can modify base on your situation
 - [alb-default-process.config](.ebextensions/alb-default-process.config)
 
 ## This repo contains (install on 2017/05/25)
-- [WordPress 4.7.5]
+- [WordPress 4.8](https://wordpress.org/download/)
 - [WooCommerce 3.0.7](https://wordpress.org/plugins/woocommerce/)
 - [WordPress Importer 0.6.3](https://wordpress.org/plugins/wordpress-importer/)
 - [Redis Object Cache 1.3.5](https://wordpress.org/plugins/redis-cache/)
