@@ -39,6 +39,7 @@ class WC_Product_Variation extends WC_Product_Simple {
 		'tax_class'         => '',
 		'shipping_class_id' => '',
 		'image_id'          => '',
+		'purchase_note'     => '',
 	);
 
 	/**
@@ -75,6 +76,23 @@ class WC_Product_Variation extends WC_Product_Simple {
 	 */
 	public function get_title() {
 		return apply_filters( 'woocommerce_product_title', $this->parent_data['title'], $this );
+	}
+
+	/**
+	 * Get product name with SKU or ID. Used within admin.
+	 *
+	 * @return string Formatted product name
+	 */
+	public function get_formatted_name() {
+		if ( $this->get_sku() ) {
+			$identifier = $this->get_sku();
+		} else {
+			$identifier = '#' . $this->get_id();
+		}
+
+		$formatted_variation_list = wc_get_formatted_variation( $this, true, true );
+
+		return sprintf( '%2$s (%1$s)', $identifier, $this->get_name() ) . '<span class="description">' . $formatted_variation_list . '</span>';
 	}
 
 	/**
@@ -320,6 +338,23 @@ class WC_Product_Variation extends WC_Product_Simple {
 	}
 
 	/**
+	 * Get purchase note.
+	 *
+	 * @since 3.0.0
+	 * @param  string $context
+	 * @return string
+	 */
+	public function get_purchase_note( $context = 'view' ) {
+		$value = $this->get_prop( 'purchase_note', $context );
+
+		// Inherit value from parent.
+		if ( 'view' === $context && empty( $value ) ) {
+			$value = apply_filters( $this->get_hook_prefix() . 'purchase_note', $this->parent_data['purchase_note'], $this );
+		}
+		return $value;
+	}
+
+	/**
 	 * Get shipping class ID.
 	 *
 	 * @since 3.0.0
@@ -334,6 +369,16 @@ class WC_Product_Variation extends WC_Product_Simple {
 		}
 
 		return $shipping_class_id;
+	}
+
+	/**
+	 * Get catalog visibility.
+	 *
+	 * @param  string $context
+	 * @return string
+	 */
+	public function get_catalog_visibility( $context = 'view' ) {
+		return apply_filters( $this->get_hook_prefix() . 'catalog_visibility', $this->parent_data['catalog_visibility'], $this );
 	}
 
 	/*
